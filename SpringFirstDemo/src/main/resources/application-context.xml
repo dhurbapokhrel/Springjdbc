@@ -1,0 +1,57 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- Setters Injection -->
+	<bean id="driver1" class="com.spring.Pojo.Driver">
+		<property name="id" value="1"></property>
+		<property name="name" value="Mukesh"></property>
+		<property name="email" value="Mukesh.gmail@gmail.com"></property>
+		<property name="vehicle" ref="vehicle3"></property>
+	</bean>
+
+	<!-- Constructor Injection -->
+	<bean id="driver2" class="com.spring.Pojo.Driver">
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="Dinesh"></constructor-arg>
+		<constructor-arg value="dinesh.gmail@gmail.com"></constructor-arg>
+		<constructor-arg ref ="vehicle2"></constructor-arg>
+	</bean>
+
+	<!-- Adding bean for Vehicle -->
+	<!-- Setters Injection -->
+	<bean id="vehicle1" class="com.spring.Pojo.Vehicle">
+		<property name="make" value="Honda"></property>
+		<property name="year" value="2019"></property>
+		<property name="color" value="White"></property>
+		<property name="model" value="Accord"></property>
+		<property name="vin" value="adfasfasfafafaf"></property>
+	</bean>
+	
+	<!-- Setters Injection -->
+	<bean id="vehicle2" class="com.spring.Pojo.Vehicle">
+		<property name="make" value="Toyota"></property>
+		<property name="year" value="2020"></property>
+		<property name="color" value="Silver"></property>
+		<property name="model" value="Camery"></property>
+		<property name="vin" value="jdfc4578e4690"></property>
+	</bean>
+	
+	<!-- Constructor Injection -->
+	<bean id="vehicle3" class="com.spring.Pojo.Vehicle">
+		<constructor-arg value="Ford"></constructor-arg>
+		<constructor-arg value="2018"></constructor-arg>
+		<constructor-arg value="Blue"></constructor-arg>
+		<constructor-arg value ="Suv"></constructor-arg>
+		<constructor-arg value="hjfkru475888"></constructor-arg>
+		<constructor-arg value="XYZ 9820"></constructor-arg>
+	</bean>
+
+</beans>
